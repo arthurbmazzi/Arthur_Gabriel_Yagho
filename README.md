@@ -3,3 +3,6 @@ Grupo da disciplina de Engenharia de Software formado por: Arthur Boechat Mazzi,
 
 ## Link do Trello para Gerência de Projeto
 - [Clique Aqui](https://trello.com/b/qfATv0oX/jogo-educacional-poo) 
+
+## Projeto
+Desenvolvimento de um jogo para o apoio do ensino e aprendizagem de Orientação a Objetos
