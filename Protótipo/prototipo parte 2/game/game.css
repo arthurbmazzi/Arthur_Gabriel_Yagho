@@ -1,0 +1,45 @@
+#gameMenu {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 800px;
+    height: 450px;
+    background-color:mediumseagreen;
+    padding-left: 30px;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: large;
+    opacity: 1 !important;
+}
+
+#answer{    
+    font-weight: normal;
+    margin-top: 30px;
+}
+
+#question{    
+    font-weight: normal;
+    background-color:seagreen;
+    padding-left: 10px;
+    padding-top: 10px;    
+    width: 740px;
+    padding-bottom: 30px;
+    font-size: larger;
+}
+
+#answerButton1, #answerButton2, #answerButton3, #answerButton4{    
+    width: 750px;
+    text-align: left;
+    height: 40px;
+}
+
+#resumeGame {
+    font-weight: normal;
+    margin-top: 30px;
+    display: flex;    
+    align-items: center;
+    justify-content: center;   
+}

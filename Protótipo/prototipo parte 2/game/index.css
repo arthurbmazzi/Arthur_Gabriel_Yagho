@@ -1,0 +1,33 @@
+body {
+  /* Allow canvas to hit the edges of the browser viewport. */
+  margin: 0;
+}
+
+#screen canvas {
+  margin: auto;
+  /* Hide the gap for font descenders. */
+  display:block;
+}
+
+#initialScreen {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    height: 90%;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+#hint {
+  background-color:yellowgreen;
+  bottom: 100px;
+  left: 300px;
+  font-size: larger;
+  font-weight: bold;
+  position: absolute;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
