@@ -2,15 +2,13 @@
  * main
  */
 var game = {
-
     /**
      *
      * Initialize the application
      */
-    onload: function() {
-
+    onload: function () {
         // init the video
-        if (!me.video.init(800, 600, {parent : "screen", scale : "auto"})) {
+        if (!me.video.init(800, 600, { parent: "screen", scale: "auto" })) {
             alert("Your browser does not support HTML5 canvas.");
             return;
         }
@@ -19,14 +17,13 @@ var game = {
         me.loader.preload(game.resources, this.loaded.bind(this));
     },
 
-
     /**
      * callback when everything is loaded
      */
-    loaded: function ()    {
-
+    loaded: function () {
         // set the "Play/Ingame" Screen Object
         me.state.set(me.state.PLAY, new game.PlayScreen());
+        me.state.set(me.state.MENU, new game.MenuScreen());
 
         // set the fade transition effect
         me.state.transition("fade", "#FFFFFF", 250);
@@ -35,6 +32,6 @@ var game = {
         me.pool.register("mainPlayer", game.PlayerEntity);
 
         // switch to PLAY state
-        me.state.change(me.state.PLAY);
+        me.state.change(me.state.MENU);
     }
 };
