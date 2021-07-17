@@ -4,6 +4,7 @@ game.resources = [
      * @example
      * { name: "example", type:"image", src: "data/img/example.png" },
      */
+    { name: "title_screen", type:"image", src:"data/img/gui/title_screen.png" },
     { name: "forest",  type:"image", src: "data/img/forest.png" },
     { name: "build", type:"image", src: "data/img/build.png" },
     { name: "Sprite", type:"image", src: "data/img/Sprite.png" },
@@ -22,7 +23,7 @@ game.resources = [
      * { name: "example01", type: "tmx", src: "data/map/example01.tmx" },
      * { name: "example01", type: "tmx", src: "data/map/example01.json" },
       */
-    { name: "isometric", type: "tmx", src: "data/map/isometric.tmx" }
+    { name: "isometric", type: "tmx", src: "data/map/isometric.tmx" },
 
     /* Background music.
      * @example
@@ -33,6 +34,10 @@ game.resources = [
      * @example
      * { name: "example_sfx", type: "audio", src: "data/sfx/" }
      */
+
+    // game font
+    { name: "PressStart2P", type:"image", src: "data/fnt/PressStart2P.png" },
+    { name: "PressStart2P", type:"binary", src: "data/fnt/PressStart2P.fnt"}
 
     /* Atlases
      * @example
