@@ -17,7 +17,9 @@ function resume(number)
         var x = document.getElementById("answerButton4");
         x.style.backgroundColor = "";   
         
-        document.getElementById("hint").style.display = "none";   
+        document.getElementById("hint").style.display = "none";
+        document.getElementById("tip").style.display = "none";   
+        document.getElementById("resumeGame").style.display = "none";   
     }
     else if(number == 2)
     {
