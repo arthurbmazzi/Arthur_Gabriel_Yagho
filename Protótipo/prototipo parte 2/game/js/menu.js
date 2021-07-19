@@ -1,8 +1,10 @@
-function resume(number)
+function resume(number, questionNumber)
 {
     if(number == 3)
     {
-        var y = document.getElementById("gameMenu");
+        var numberString = questionNumber.toString();
+
+        var y = document.getElementById(numberString);
         y.style.display = "none";   
 
         var x = document.getElementById("answerButton1");
@@ -28,7 +30,6 @@ function resume(number)
     }
     else {
         var x = document.getElementById("pauseMenu");
-        var y = document.getElementById("screen");
         x.style.display = "none";
     }   
 }
@@ -42,12 +43,5 @@ function reset()
 
 function exit()
 {
-    var x = document.getElementById("initialScreen");
-    x.style.display = "block";
-    var y = document.getElementById("screen");
-    y.style.display = "none";
-    y.style.opacity = 1;
-    var z = document.getElementById("pauseMenu");
-    z.style.display = "none";
-
+    me.state.change(me.state.MENU);
 }

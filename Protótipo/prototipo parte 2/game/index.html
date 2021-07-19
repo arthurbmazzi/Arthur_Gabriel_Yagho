@@ -19,22 +19,83 @@
     <div id="option"> <button id="button" onclick="">Dificuldade</button></div>
     <div id="option"> <button id="button" onclick="">Estatísticas</button></div>
     <div id="option"> <button id="button" onclick="reset()">Reiniciar</button></div>
-    <div id="option"> <button id="button" onclick="exit()">Sair</button></div>
   </div>
 
   <div style="position:relative; margin-top:30px"></div>
 
   <div name="perguntas">
     <div name="pergunta1">
-      <div id="gameMenu" style="display:none">
-        <div id="1" class="question"> Dadas as classes: Barco, Carro e ônibus, qual das opções seria uma possível classe pai para as
+      <div class="gameMenu" id="1" style="display:none">
+        <div class="question"> Dadas as classes: Barco, Carro e ônibus, qual das opções seria uma possível classe pai para as
           classes citadas.</div>
-        <div id="answer"><button id="answerButton1" onclick="reviewAnswer(false, 'answerButton1')">a) Automóveis</button> </div>
-        <div id="answer"><button id="answerButton2" onclick="reviewAnswer(false, 'answerButton2')">b) VeiculosMaritimos</button></div>
-        <div id="answer"><button id="answerButton3" onclick="reviewAnswer(true, 'answerButton3')">c)  MeiosDeTransporte</button></div>
-        <div id="answer"><button id="answerButton4" onclick="reviewAnswer(false, 'answerButton4')">d) TransportePublico</button></div>
-        <div id="resumeGame" style="display:none"> <button id="button" onclick="resume(3)">Retomar</button></div>
-        <div id="tip" style="display:none"> <button id="button2" onclick="showTip()">Dicas</button></div>
+        <div id="answer"><button id="answerButton1" onclick="reviewAnswer(false, 'answerButton1', 1)">a) Automóveis</button> </div>
+        <div id="answer"><button id="answerButton2" onclick="reviewAnswer(false, 'answerButton2', 1)">b) VeiculosMaritimos</button></div>
+        <div id="answer"><button id="answerButton3" onclick="reviewAnswer(true, 'answerButton3', 1)">c)  MeiosDeTransporte</button></div>
+        <div id="answer"><button id="answerButton4" onclick="reviewAnswer(false, 'answerButton4', 1)">d) TransportePublico</button></div>
+        <div id="resumeGame1" style="display:none"> <button id="button" onclick="resume(3, 1)">Retomar</button></div>
+        <div id="tip1" style="display:none"> <button id="button2" onclick="showTip()">Dicas</button></div>
+      </div>
+      <div class="tip" id="tipBox" style="display:none">Dicas:
+        <div id="tipElement">
+          Lembre-se de que a classe pai precisa ter as característica comuns à todas as classes derivadas.
+        </div>
+        <div><button id="button" onclick="resume(2)">Retomar</button></div>
+      </div>
+    </div>
+    <div name="pergunta2">
+      <div class="gameMenu" id="2" style="display:none">
+        <div class="question"> Qual dos conceitos de programação orientada a objetos que permite a criação de métodos com a mesma assinatura, porém com implementações diferentes?</div>
+        <div id="answer"><button id="answerButton5" onclick="reviewAnswer(false, 'answerButton5', 2)">a) Encapsulamento</button> </div>
+        <div id="answer"><button id="answerButton6" onclick="reviewAnswer(false, 'answerButton6', 2)">b) Herança</button></div>
+        <div id="answer"><button id="answerButton7" onclick="reviewAnswer(false, 'answerButton7', 2)">c) Interface</button></div>
+        <div id="answer"><button id="answerButton8" onclick="reviewAnswer(true, 'answerButton8', 2)">d) Polimorfismo</button></div>
+        <div id="resumeGame2" style="display:none"> <button id="button" onclick="resume(3, 2)">Retomar</button></div>
+        <div id="tip2" style="display:none"> <button id="button2" onclick="showTip()">Dicas</button></div>
+      </div>
+      <div class="tip" id="tipBox" style="display:none">Dicas:
+        <div id="tipElement"></div>
+        <div><button id="button" onclick="resume(2)">Retomar</button></div>
+      </div>
+    </div>
+    <div name="pergunta3">
+      <div class="gameMenu" id="3" style="display:none">
+        <div class="question"> Na programação orientada a objetos, o programador pode definir classes sem qualquer pretensão de instanciar objetos. Nestas situações, essas classes são conhecidas como:</div>
+        <div id="answer"><button id="answerButton9" onclick="reviewAnswer(true, 'answerButton9', 3)">a) Abstratas</button> </div>
+        <div id="answer"><button id="answerButton10" onclick="reviewAnswer(false, 'answerButton10', 3)">b) Concretas</button></div>
+        <div id="answer"><button id="answerButton11" onclick="reviewAnswer(false, 'answerButton11', 3)">c) Protegidas</button></div>
+        <div id="answer"><button id="answerButton12" onclick="reviewAnswer(false, 'answerButton12', 3)">d) Privadas</button></div>
+        <div id="resumeGame3" style="display:none"> <button id="button" onclick="resume(3, 3)">Retomar</button></div>
+        <div id="tip3" style="display:none"> <button id="button2" onclick="showTip()">Dicas</button></div>
+      </div>
+      <div class="tip" id="tipBox" style="display:none">Dicas:
+        <div id="tipElement"></div>
+        <div><button id="button" onclick="resume(2)">Retomar</button></div>
+      </div>
+    </div>
+    <div name="pergunta4">
+      <div class="gameMenu" id="4" style="display:none">
+        <div class="question"> No paradigma de Programação Orientada a Objetos, o princípio que auxilia a manutenibilidade dos sistemas, facilitando a substituição de funcionalidades isoladas, minimizando o impacto sobre o funcionamento do restante do sistema, é:</div>
+        <div id="answer"><button id="answerButton13" onclick="reviewAnswer(true, 'answerButton13', 4)">a) Encapsulamento</button> </div>
+        <div id="answer"><button id="answerButton14" onclick="reviewAnswer(false, 'answerButton14', 4)">b) Polimorfismo</button></div>
+        <div id="answer"><button id="answerButton15" onclick="reviewAnswer(false, 'answerButton15', 4)">c) Herança</button></div>
+        <div id="answer"><button id="answerButton16" onclick="reviewAnswer(false, 'answerButton16', 4)">d) Abstração</button></div>
+        <div id="resumeGame4" style="display:none"> <button id="button" onclick="resume(3, 4)">Retomar</button></div>
+        <div id="tip4" style="display:none"> <button id="button2" onclick="showTip()">Dicas</button></div>
+      </div>
+      <div class="tip" id="tipBox" style="display:none">Dicas:
+        <div id="tipElement"></div>
+        <div><button id="button" onclick="resume(2)">Retomar</button></div>
+      </div>
+    </div>
+    <div name="pergunta5">
+      <div class="gameMenu" id="5" style="display:none">
+        <div class="question">Como é chamado, em orientação a objetos, o recurso em que uma classe define os moldes de métodos a serem implementados por classes herdeiras dessa classe?</div>
+        <div id="answer"><button id="answerButton17" onclick="reviewAnswer(false, 'answerButton17', 5)">a) Encapsulamento</button> </div>
+        <div id="answer"><button id="answerButton18" onclick="reviewAnswer(false, 'answerButton18', 5)">b) Polimorfismo</button></div>
+        <div id="answer"><button id="answerButton19" onclick="reviewAnswer(false, 'answerButton19', 5)">c) Herança múltipla</button></div>
+        <div id="answer"><button id="answerButton20" onclick="reviewAnswer(true, 'answerButton20', 5)">d) Interface</button></div>
+        <div id="resumeGame5" style="display:none"> <button id="button" onclick="resume(3, 5)">Retomar</button></div>
+        <div id="tip5" style="display:none"> <button id="button2" onclick="showTip()">Dicas</button></div>
       </div>
       <div class="tip" id="tipBox" style="display:none">Dicas:
         <div id="tipElement"></div>
