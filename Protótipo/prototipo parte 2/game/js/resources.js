@@ -5,6 +5,7 @@ game.resources = [
      * { name: "example", type:"image", src: "data/img/example.png" },
      */
     { name: "title_screen", type:"image", src:"data/img/gui/title_screen.png" },
+    { name: "initial_screen", type:"image", src:"data/img/telaInicio.png" },
     { name: "forest",  type:"image", src: "data/img/forest.png" },
     { name: "build", type:"image", src: "data/img/build.png" },
     { name: "Sprite", type:"image", src: "data/img/Sprite.png" },
