@@ -8,7 +8,7 @@ var game = {
      */
     onload: function () {
         // init the video
-        if (!me.video.init(800, 600, { parent: "screen", scale: "auto" })) {
+        if (!me.video.init(1280, 720, { parent: "screen", scale: "auto", scaleMethod: "fit", style:"width:100px"})) {
             alert("Your browser does not support HTML5 canvas.");
             return;
         }

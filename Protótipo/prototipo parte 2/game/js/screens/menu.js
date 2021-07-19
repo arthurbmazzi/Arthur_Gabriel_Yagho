@@ -8,7 +8,7 @@ game.MenuScreen = me.Stage.extend({
             me.game.viewport.width / 2,
             me.game.viewport.height / 2,
             {
-                image: me.loader.getImage("title_screen")
+                image: me.loader.getImage("initial_screen")
             }
         );
 
@@ -39,7 +39,7 @@ game.MenuScreen = me.Stage.extend({
 
                     this.scroller =
                         "JOGO PARA O APOIO DE ENSINO E APRENDIZAGEM DE ORIENTACAO A OBJETOS";
-                    this.scrollerpos = 600;
+                    this.scrollerpos = 1200;
 
                     // a tween to animate the arrow
                     this.scrollertween = new me.Tween(this)
@@ -80,7 +80,7 @@ game.MenuScreen = me.Stage.extend({
                         renderer,
                         "PRESSIONE ENTER PARA COMECAR",
                         me.game.viewport.width,
-                        720,
+                        1000,
                     );
                     this.font.textAlign = "left";
                     this.font.draw(
