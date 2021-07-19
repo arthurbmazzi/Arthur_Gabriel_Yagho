@@ -63,7 +63,7 @@
     justify-content: center;   
 }
 
-#tipBox {
+#tipBox1, #tipBox2, #tipBox3, #tipBox4,#tipBox5 {
     position: absolute;
     border: 15px solid #d5d5d5;
     top:0;

@@ -25,7 +25,7 @@ function resume(number, questionNumber)
     }
     else if(number == 2)
     {
-        var y = document.getElementById("tipBox");
+        var y = document.getElementById("tipBox" + questionNumber);
         y.style.display = "none";
     }
     else {

@@ -33,13 +33,13 @@
         <div id="answer"><button id="answerButton3" onclick="reviewAnswer(true, 'answerButton3', 1)">c)  MeiosDeTransporte</button></div>
         <div id="answer"><button id="answerButton4" onclick="reviewAnswer(false, 'answerButton4', 1)">d) TransportePublico</button></div>
         <div id="resumeGame1" style="display:none"> <button id="button" onclick="resume(3, 1)">Retomar</button></div>
-        <div id="tip1" style="display:none"> <button id="button2" onclick="showTip()">Dicas</button></div>
+        <div id="tip1" style="display:none"> <button id="button2" onclick="showTip(1)">Dicas</button></div>
       </div>
-      <div class="tip" id="tipBox" style="display:none">Dicas:
+      <div class="tip" id="tipBox1" style="display:none">Dicas:
         <div id="tipElement">
           Lembre-se de que a classe pai precisa ter as característica comuns à todas as classes derivadas.
         </div>
-        <div><button id="button" onclick="resume(2)">Retomar</button></div>
+        <div><button id="button" onclick="resume(2, 1)">Retomar</button></div>
       </div>
     </div>
     <div name="pergunta2">
@@ -50,11 +50,13 @@
         <div id="answer"><button id="answerButton7" onclick="reviewAnswer(false, 'answerButton7', 2)">c) Interface</button></div>
         <div id="answer"><button id="answerButton8" onclick="reviewAnswer(true, 'answerButton8', 2)">d) Polimorfismo</button></div>
         <div id="resumeGame2" style="display:none"> <button id="button" onclick="resume(3, 2)">Retomar</button></div>
-        <div id="tip2" style="display:none"> <button id="button2" onclick="showTip()">Dicas</button></div>
+        <div id="tip2" style="display:none"> <button id="button2" onclick="showTip(2)">Dicas</button></div>
       </div>
-      <div class="tip" id="tipBox" style="display:none">Dicas:
-        <div id="tipElement"></div>
-        <div><button id="button" onclick="resume(2)">Retomar</button></div>
+      <div class="tip" id="tipBox2" style="display:none">Dicas:
+        <div id="tipElement">
+          Para esta pergunta, pense na palavra que possa representar algo que permita múltiplas formas.
+        </div>
+        <div><button id="button" onclick="resume(2, 2)">Retomar</button></div>
       </div>
     </div>
     <div name="pergunta3">
@@ -65,11 +67,13 @@
         <div id="answer"><button id="answerButton11" onclick="reviewAnswer(false, 'answerButton11', 3)">c) Protegidas</button></div>
         <div id="answer"><button id="answerButton12" onclick="reviewAnswer(false, 'answerButton12', 3)">d) Privadas</button></div>
         <div id="resumeGame3" style="display:none"> <button id="button" onclick="resume(3, 3)">Retomar</button></div>
-        <div id="tip3" style="display:none"> <button id="button2" onclick="showTip()">Dicas</button></div>
+        <div id="tip3" style="display:none"> <button id="button2" onclick="showTip(3)">Dicas</button></div>
       </div>
-      <div class="tip" id="tipBox" style="display:none">Dicas:
-        <div id="tipElement"></div>
-        <div><button id="button" onclick="resume(2)">Retomar</button></div>
+      <div class="tip" id="tipBox3" style="display:none">Dicas:
+        <div id="tipElement">
+          Este é um tipo de classe modelo, que não pode ser instanciada e pode conter ou não métodos do mesmo tipo dela. 
+        </div>
+        <div><button id="button" onclick="resume(2, 3)">Retomar</button></div>
       </div>
     </div>
     <div name="pergunta4">
@@ -80,11 +84,13 @@
         <div id="answer"><button id="answerButton15" onclick="reviewAnswer(false, 'answerButton15', 4)">c) Herança</button></div>
         <div id="answer"><button id="answerButton16" onclick="reviewAnswer(false, 'answerButton16', 4)">d) Abstração</button></div>
         <div id="resumeGame4" style="display:none"> <button id="button" onclick="resume(3, 4)">Retomar</button></div>
-        <div id="tip4" style="display:none"> <button id="button2" onclick="showTip()">Dicas</button></div>
+        <div id="tip4" style="display:none"> <button id="button2" onclick="showTip(4)">Dicas</button></div>
       </div>
-      <div class="tip" id="tipBox" style="display:none">Dicas:
-        <div id="tipElement"></div>
-        <div><button id="button" onclick="resume(2)">Retomar</button></div>
+      <div class="tip" id="tipBox4" style="display:none">Dicas:
+        <div id="tipElement">
+          A ideia desse princípio é evitar repetição de código e facilitar a manutenção.
+        </div>
+        <div><button id="button" onclick="resume(2, 4)">Retomar</button></div>
       </div>
     </div>
     <div name="pergunta5">
@@ -95,11 +101,13 @@
         <div id="answer"><button id="answerButton19" onclick="reviewAnswer(false, 'answerButton19', 5)">c) Herança múltipla</button></div>
         <div id="answer"><button id="answerButton20" onclick="reviewAnswer(true, 'answerButton20', 5)">d) Interface</button></div>
         <div id="resumeGame5" style="display:none"> <button id="button" onclick="resume(3, 5)">Retomar</button></div>
-        <div id="tip5" style="display:none"> <button id="button2" onclick="showTip()">Dicas</button></div>
+        <div id="tip5" style="display:none"> <button id="button2" onclick="showTip(5)">Dicas</button></div>
       </div>
-      <div class="tip" id="tipBox" style="display:none">Dicas:
-        <div id="tipElement"></div>
-        <div><button id="button" onclick="resume(2)">Retomar</button></div>
+      <div class="tip" id="tipBox5" style="display:none">Dicas:
+        <div id="tipElement">
+          Este tipo de recurso é conhecido como um contrato que obriga a classe a implementar método(s).  
+        </div>
+        <div><button id="button" onclick="resume(2, 5)">Retomar</button></div>
       </div>
     </div>
   </div>

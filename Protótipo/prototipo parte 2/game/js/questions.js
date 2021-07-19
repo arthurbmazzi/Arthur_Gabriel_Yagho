@@ -23,7 +23,7 @@ function reviewAnswer(isCorrect, id, question) {
     }
 }
 
-function showTip() {
-    var z = document.getElementById("tipBox");
+function showTip(question) {
+    var z = document.getElementById("tipBox" + question);
     z.style.display = "block";
 }
