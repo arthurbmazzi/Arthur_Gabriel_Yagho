@@ -1,4 +1,4 @@
-#gameMenu {
+.gameMenu {
     position: absolute;
     margin: auto;
     top:0;
@@ -33,14 +33,18 @@
     font-size: larger;
 }
 
-#answerButton1, #answerButton2, #answerButton3, #answerButton4{    
+#answerButton1, #answerButton2, #answerButton3, #answerButton4,
+#answerButton5, #answerButton6, #answerButton7, #answerButton8,
+#answerButton9, #answerButton10, #answerButton11, #answerButton12
+#answerButton13, #answerButton14, #answerButton15, #answerButton16
+#answerButton17, #answerButton18, #answerButton19, #answerButton20{    
     width: 750px;
     text-align: left;
     padding-left: 10px;
     height: 40px;
 }
 
-#resumeGame {
+#resumeGame1, #resumeGame2, #resumeGame3, #resumeGame4, #resumeGame5 {
     font-weight: normal;
     margin-top: 20px;
     display: flex;    
@@ -50,7 +54,7 @@
     float:left;
 }
 
-#tip {
+#tip1, #tip2, #tip3, #tip4, #tip5 {
     font-weight: normal;
     margin-top: 20px;
     display: flex;    
@@ -59,8 +63,9 @@
     justify-content: center;   
 }
 
-#tipBox {
+#tipBox1, #tipBox2, #tipBox3, #tipBox4,#tipBox5 {
     position: absolute;
+    border: 15px solid #d5d5d5;
     top:0;
     bottom: 0;
     left: 0;

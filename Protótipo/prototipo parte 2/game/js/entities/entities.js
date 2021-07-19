@@ -82,11 +82,9 @@ game.PlayerEntity = me.Entity.extend({
 
                 if (x.style.display === "none") {
                   x.style.display = "block";
-                  y.style.opacity = 0.5;
                   x.style.opacity = 1;
                 } else {
                   x.style.display = "none";
-                  y.style.opacity = 1;
                 }
                 // if (me.state.isPaused()) {
                 //     me.state.resume();
@@ -145,9 +143,57 @@ game.PlayerEntity = me.Entity.extend({
 
                 if(me.input.isKeyPressed("interact"))
                 {
+                    // var x = document.getElementById("gameMenu");
+                    // x.style.display = "block";
+                    showQuestion(2);
+                }
+            }
+            if(response.b.id == 1)
+            {
+                var x = document.getElementById("hint");
+                x.style.display = "block";
+
+                if(me.input.isKeyPressed("interact"))
+                {
                     var x = document.getElementById("gameMenu");
                     x.style.display = "block";
-                    showQuestion(1);
+                    showQuestion(2);
+                }
+            }
+            if(response.b.id == 1)
+            {
+                var x = document.getElementById("hint");
+                x.style.display = "block";
+
+                if(me.input.isKeyPressed("interact"))
+                {
+                    var x = document.getElementById("gameMenu");
+                    x.style.display = "block";
+                    showQuestion(3);
+                }
+            }
+            if(response.b.id == 1)
+            {
+                var x = document.getElementById("hint");
+                x.style.display = "block";
+
+                if(me.input.isKeyPressed("interact"))
+                {
+                    var x = document.getElementById("gameMenu");
+                    x.style.display = "block";
+                    showQuestion(4);
+                }
+            }
+            if(response.b.id == 1)
+            {
+                var x = document.getElementById("hint");
+                x.style.display = "block";
+
+                if(me.input.isKeyPressed("interact"))
+                {
+                    var x = document.getElementById("gameMenu");
+                    x.style.display = "block";
+                    showQuestion(5);
                 }
             }
         }
