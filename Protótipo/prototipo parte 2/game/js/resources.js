@@ -17,6 +17,7 @@ game.resources = [
     { name: "TX Tileset Wall", type:"image", src: "data/img/TX Tileset Wall.png"},
     { name: "TX Shadow", type:"image", src: "data/img/TX Shadow.png"},
     { name: "BaseChip pipo", type:"image", src: "data/img/BaseChip pipo.png"},
+    { name: "D_Inside_House", type:"image", src: "data/img/D_Inside_House.png"},
 
 
     /* Maps.
