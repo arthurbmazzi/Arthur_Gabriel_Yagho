@@ -1,12 +1,7 @@
 function showQuestion(number) {    
-    var x = document.getElementById("questions");
-    var y = x.contentDocument;
-    
     var numberString = number.toString();
 
-    var a = y.getElementById(numberString);
-    
-    x.style.display = "block"
+    var a = document.getElementById(numberString);
     a.style.display = "block";
 }
 
@@ -27,6 +22,9 @@ function reviewAnswer(isCorrect, id) {
 
         var y = document.getElementById("resumeGame");
         y.style.display = "block";
+
+        var z = document.getElementById("tip");
+        z.style.display = "block";
     }
     else{
         var x = document.getElementById(id);
@@ -34,24 +32,8 @@ function reviewAnswer(isCorrect, id) {
     }
 }
 
-function resumeGame() {
-    var y = document.getElementsByClassName("question");
-    y[0].style.display = "none";
-
-    var a = window.frameElement;
-    a.style.display = "none";        
-
-    var x = document.getElementById("answerButton1");
-    x.style.backgroundColor = "";
-
-    var x = document.getElementById("answerButton2");
-    x.style.backgroundColor = "";
-    
-    var x = document.getElementById("answerButton3");
-    x.style.backgroundColor = "";
-
-    var x = document.getElementById("answerButton4");
-    x.style.backgroundColor = "";   
-    
-    window.frameElement.parentElement.getElementsByClassName("hint")[0].style.display = "none";
+function showTip() {
+    resume(3);   
+    var z = document.getElementById("tipBox");
+    z.style.display = "block";
 }

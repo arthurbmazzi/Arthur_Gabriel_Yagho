@@ -145,12 +145,10 @@ game.PlayerEntity = me.Entity.extend({
 
                 if(me.input.isKeyPressed("interact"))
                 {
+                    var x = document.getElementById("gameMenu");
+                    x.style.display = "block";
                     showQuestion(1);
                 }
-            }
-            else{
-                var x = document.getElementById("hint");
-                x.style.display = "none";
             }
         }
         return true;

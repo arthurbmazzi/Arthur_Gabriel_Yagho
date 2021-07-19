@@ -1,6 +1,10 @@
 #gameMenu {
     position: absolute;
     margin: auto;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     width: 800px;
     height: 450px;
     background-color:mediumseagreen;
@@ -11,34 +15,19 @@
     opacity: 1 !important;
 }
 
-#questions {
-    position: absolute;
-    margin: auto;    
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 800px;
-    height: 450px;
-    background-color:mediumseagreen;
-    font-weight: bold;
-    font-size: large;
-    opacity: 1 !important;    
-}
-
 #answer{    
     font-weight: normal;
     margin-top: 30px;
     margin-left: 10px;
 }
 
-#question{    
+.question{    
     font-weight: normal;
     background-color:seagreen;
     padding-left: 10px;
     padding-top: 10px;  
-    margin-left: 20px;  
-    margin-top: 20px;  
+    margin-left: 10px;  
+    margin-top: 10px;  
     width: 740px;
     padding-bottom: 30px;
     font-size: larger;
@@ -47,7 +36,6 @@
 #answerButton1, #answerButton2, #answerButton3, #answerButton4{    
     width: 750px;
     text-align: left;
-    margin-left: 10px;
     padding-left: 10px;
     height: 40px;
 }
@@ -56,7 +44,37 @@
     font-weight: normal;
     margin-top: 20px;
     display: flex;    
-    margin-left: 20px;
+    margin-left: 10px;
     align-items: center;
     justify-content: center;   
+    float:left;
+}
+
+#tip {
+    font-weight: normal;
+    margin-top: 20px;
+    display: flex;    
+    margin-left: 200px;
+    align-items: center;
+    justify-content: center;   
+}
+
+#tipBox {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 25px;
+    width: 500px;
+    height: 200px;
+    background-color:mediumseagreen;
+    z-index: 10;
+    text-align:left;
+    padding-left: 20px;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: large;
+    opacity: 1 !important;
 }
