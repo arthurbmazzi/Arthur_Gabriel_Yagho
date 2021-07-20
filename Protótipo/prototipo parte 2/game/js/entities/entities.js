@@ -134,7 +134,7 @@ game.PlayerEntity = me.Entity.extend({
 
                 if (me.input.isKeyPressed("interact"))
                 {
-                    showQuestion(2);
+                    showQuestion(1);
                     sessionStorage.setItem("levelPass", true);
                 }
 
