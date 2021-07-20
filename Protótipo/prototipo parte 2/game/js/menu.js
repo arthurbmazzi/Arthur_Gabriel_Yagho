@@ -5,23 +5,16 @@ function resume(number, questionNumber)
         var numberString = questionNumber.toString();
 
         var y = document.getElementById(numberString);
-        y.style.display = "none";   
-
-        var x = document.getElementById("answerButton1");
-        x.style.backgroundColor = "";
-
-        var x = document.getElementById("answerButton2");
-        x.style.backgroundColor = "";
-        
-        var x = document.getElementById("answerButton3");
-        x.style.backgroundColor = "";
-
-        var x = document.getElementById("answerButton4");
-        x.style.backgroundColor = "";   
+        y.style.display = "none";
         
         document.getElementById("hint").style.display = "none";
-        document.getElementById("tip").style.display = "none";   
-        document.getElementById("resumeGame").style.display = "none";   
+        document.getElementById("resumeGame" + questionNumber).style.display = "none";  
+        document.getElementById("tip" + questionNumber).style.display = "none";   
+
+        for(var i = 1; i < 21; i++)
+        {
+            document.getElementById("answerButton" + i).style.backgroundColor = "";   
+        }
     }
     else if(number == 2)
     {
@@ -37,11 +30,17 @@ function resume(number, questionNumber)
 function reset()
 {
     var x = document.getElementById("pauseMenu");
-    var y = document.getElementById("screen");
     x.style.display = "none";
 }
 
-function exit()
-{
-    me.state.change(me.state.MENU);
+function disableTips()
+{   
+    if(localStorage.enableTips === 'true')
+    { 
+        localStorage.setItem('enableTips', false);
+    }
+    else{
+        localStorage.setItem('enableTips', true);
+    }
+    resume();
 }

@@ -18,12 +18,20 @@ function reviewAnswer(isCorrect, id, question) {
         var x = document.getElementById(id);
         x.style.backgroundColor = "#DC143C";   
         
-        var z = document.getElementById("tip"  + question);
-        z.style.display = "block";
+        var isTrueSet = (localStorage.enableTips === 'true');
+        if(isTrueSet)
+        {
+            var z = document.getElementById("tip"  + question);
+            z.style.display = "block";
+        }
     }
 }
 
 function showTip(question) {
-    var z = document.getElementById("tipBox" + question);
-    z.style.display = "block";
+    var isTrueSet = (localStorage.enableTips === 'true');
+    if(isTrueSet)
+    {
+        var z = document.getElementById("tipBox" + question);
+        z.style.display = "block";
+    }
 }
