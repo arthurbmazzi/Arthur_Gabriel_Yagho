@@ -143,8 +143,6 @@ game.PlayerEntity = me.Entity.extend({
 
                 if(me.input.isKeyPressed("interact"))
                 {
-                    // var x = document.getElementById("gameMenu");
-                    // x.style.display = "block";
                     showQuestion(2);
                 }
             }
@@ -155,8 +153,6 @@ game.PlayerEntity = me.Entity.extend({
 
                 if(me.input.isKeyPressed("interact"))
                 {
-                    var x = document.getElementById("gameMenu");
-                    x.style.display = "block";
                     showQuestion(2);
                 }
             }
@@ -167,8 +163,6 @@ game.PlayerEntity = me.Entity.extend({
 
                 if(me.input.isKeyPressed("interact"))
                 {
-                    var x = document.getElementById("gameMenu");
-                    x.style.display = "block";
                     showQuestion(3);
                 }
             }
@@ -179,8 +173,6 @@ game.PlayerEntity = me.Entity.extend({
 
                 if(me.input.isKeyPressed("interact"))
                 {
-                    var x = document.getElementById("gameMenu");
-                    x.style.display = "block";
                     showQuestion(4);
                 }
             }
@@ -191,8 +183,6 @@ game.PlayerEntity = me.Entity.extend({
 
                 if(me.input.isKeyPressed("interact"))
                 {
-                    var x = document.getElementById("gameMenu");
-                    x.style.display = "block";
                     showQuestion(5);
                 }
             }
