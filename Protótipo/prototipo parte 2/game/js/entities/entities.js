@@ -88,6 +88,7 @@ game.PlayerEntity = me.Entity.extend({
             if (keyCode === me.input.KEY.P) {
                 var x = document.getElementById("pauseMenu");
                 var y = document.getElementById("screen");
+                me.state.pause();
 
                 if (x.style.display === "none") {
                   x.style.display = "block";
@@ -95,28 +96,9 @@ game.PlayerEntity = me.Entity.extend({
                 } else {
                   x.style.display = "none";
                 }
-                // if (me.state.isPaused()) {
-                //     me.state.resume();
-                // }
-                // else {
-                //     me.state.pause();
-                // }
             }
         });
-        // if (me.input.isKeyPressed("pause"))
-        // {
-        //     var x = document.getElementById("pauseMenu");
-        //     var y = document.getElementById("screen");
 
-        //     if (x.style.display === "none") {
-        //       x.style.display = "block";
-        //       y.style.opacity = 0.5;
-        //       x.style.opacity = 1;
-        //     } else {
-        //       x.style.display = "none";
-        //       y.style.opacity = 1;
-        //     }
-        // }
         if (me.input.isKeyPressed("space"))
         {
             var y = document.getElementById("screen");
