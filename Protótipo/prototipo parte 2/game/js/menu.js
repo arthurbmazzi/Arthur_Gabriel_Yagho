@@ -25,14 +25,12 @@ function resume(number, questionNumber)
         var x = document.getElementById("pauseMenu");
         x.style.display = "none";
     }
-    me.state.resume();
 }
 
 function reset()
 {
     var x = document.getElementById("pauseMenu");
     x.style.display = "none";
-    me.state.resume();
 }
 
 function disableTips()
@@ -44,6 +42,5 @@ function disableTips()
     else {
         localStorage.setItem("enableTips", true);
     }
-    me.state.resume();
     resume();
 }

@@ -48,9 +48,9 @@ game.PlayerEntity = me.Entity.extend({
         // buscar no firebase os valores e se não existirem colocar como 0
         // se score não esta salvo então score = 0
         me.save.score = 0;
-        sessionStorage.setItem("tasks", me.save.score);
-        sessionStorage.setItem("tips", 0);
-        sessionStorage.setItem("levelPass", false);
+        localStorage.setItem("tasks", me.save.score);
+        localStorage.setItem("tips", 0);
+        localStorage.setItem("levelPass", false);
     },
 
     /* -----
@@ -88,7 +88,6 @@ game.PlayerEntity = me.Entity.extend({
             if (keyCode === me.input.KEY.P) {
                 var x = document.getElementById("pauseMenu");
                 var y = document.getElementById("screen");
-                me.state.pause();
 
                 if (x.style.display === "none") {
                   x.style.display = "block";
@@ -135,13 +134,17 @@ game.PlayerEntity = me.Entity.extend({
                 if (me.input.isKeyPressed("interact"))
                 {
                     showQuestion(1);
-                    sessionStorage.setItem("levelPass", true);
+                    localStorage.setItem("levelPass", true);
+                    if (localStorage.levelPass && me.save.score === 0)
+                    {
+                        me.save.score = 1;
+                        localStorage.setItem("tasks", me.save.score);
+                    }
                 }
 
-                me.save.score += 1;
-                sessionStorage.setItem("tasks", me.save.score);
-                console.log("tasks: " + sessionStorage.tasks, "tips: " + sessionStorage.tips, "levelPass: " + sessionStorage.levelPass);
+                console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
                 console.log(JSON.stringify(me.save));
+                localStorage.setItem("levelPass", false);
             }
             if (response.b.id == 102)
             {
@@ -151,7 +154,17 @@ game.PlayerEntity = me.Entity.extend({
                 if (me.input.isKeyPressed("interact"))
                 {
                     showQuestion(2);
+                    localStorage.setItem("levelPass", true);
+                    if (localStorage.levelPass && me.save.score === 1)
+                    {
+                        me.save.score = 2;
+                        localStorage.setItem("tasks", me.save.score);
+                    }
                 }
+
+                console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
+                console.log(JSON.stringify(me.save));
+                localStorage.setItem("levelPass", false);
             }
             if (response.b.id == 142)
             {
@@ -161,7 +174,17 @@ game.PlayerEntity = me.Entity.extend({
                 if (me.input.isKeyPressed("interact"))
                 {
                     showQuestion(3);
+                    localStorage.setItem("levelPass", true);
+                    if (localStorage.levelPass && me.save.score === 2)
+                    {
+                        me.save.score = 3;
+                        localStorage.setItem("tasks", me.save.score);
+                    }
                 }
+
+                console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
+                console.log(JSON.stringify(me.save));
+                localStorage.setItem("levelPass", false);
             }
             if (response.b.id == 107)
             {
@@ -171,7 +194,17 @@ game.PlayerEntity = me.Entity.extend({
                 if (me.input.isKeyPressed("interact"))
                 {
                     showQuestion(4);
+                    localStorage.setItem("levelPass", true);
+                    if (localStorage.levelPass && me.save.score === 3)
+                    {
+                        me.save.score = 4;
+                        localStorage.setItem("tasks", me.save.score);
+                    }
                 }
+
+                console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
+                console.log(JSON.stringify(me.save));
+                localStorage.setItem("levelPass", false);
             }
             if (response.b.id == 138)
             {
@@ -181,7 +214,17 @@ game.PlayerEntity = me.Entity.extend({
                 if (me.input.isKeyPressed("interact"))
                 {
                     showQuestion(5);
+                    localStorage.setItem("levelPass", true);
+                    if (localStorage.levelPass && me.save.score === 4)
+                    {
+                        me.save.score = 5;
+                        localStorage.setItem("tasks", me.save.score);
+                    }
                 }
+
+                console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
+                console.log(JSON.stringify(me.save));
+                localStorage.setItem("levelPass", false);
             }
         }
         return true;
