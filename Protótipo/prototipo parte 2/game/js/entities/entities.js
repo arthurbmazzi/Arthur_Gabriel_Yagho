@@ -143,7 +143,7 @@ game.PlayerEntity = me.Entity.extend({
                 console.log("tasks: " + sessionStorage.tasks, "tips: " + sessionStorage.tips, "levelPass: " + sessionStorage.levelPass);
                 console.log(JSON.stringify(me.save));
             }
-            if (response.b.id == 1)
+            if (response.b.id == 102)
             {
                 var x = document.getElementById("hint");
                 x.style.display = "block";
@@ -153,7 +153,7 @@ game.PlayerEntity = me.Entity.extend({
                     showQuestion(2);
                 }
             }
-            if (response.b.id == 1)
+            if (response.b.id == 142)
             {
                 var x = document.getElementById("hint");
                 x.style.display = "block";
@@ -163,7 +163,7 @@ game.PlayerEntity = me.Entity.extend({
                     showQuestion(3);
                 }
             }
-            if (response.b.id == 1)
+            if (response.b.id == 107)
             {
                 var x = document.getElementById("hint");
                 x.style.display = "block";
@@ -173,7 +173,7 @@ game.PlayerEntity = me.Entity.extend({
                     showQuestion(4);
                 }
             }
-            if (response.b.id == 1)
+            if (response.b.id == 138)
             {
                 var x = document.getElementById("hint");
                 x.style.display = "block";
