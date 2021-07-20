@@ -12,12 +12,15 @@
 </head>
 
 <body>
+  <script>localStorage.setItem('enableTips', true);</script>
+
   <div id="hint" style="display:none">Pressione a tecla "I" para interagir</div>
 
   <div id="pauseMenu">MENU PRINCIPIAL
     <div id="option1"> <button id="button" onclick="resume()">Retomar</button></div>
     <div id="option"> <button id="button" onclick="">Dificuldade</button></div>
     <div id="option"> <button id="button" onclick="">Estatísticas</button></div>
+    <div id="option"> <button id="button" onclick="disableTips()">Desativar/Ativar Dicas</button></div>
     <div id="option"> <button id="button" onclick="reset()">Reiniciar</button></div>
   </div>
 
