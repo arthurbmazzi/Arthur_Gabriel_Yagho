@@ -42,6 +42,15 @@ game.PlayerEntity = me.Entity.extend({
 
         // set the renderable position to bottom center
         this.anchorPoint.set(0.5, 0.5);
+
+        // chamada da tela de login
+
+        // buscar no firebase os valores e se não existirem colocar como 0
+        // se score não esta salvo então score = 0
+        me.save.score = 0;
+        sessionStorage.setItem("tasks", me.save.score);
+        sessionStorage.setItem("tips", 0);
+        sessionStorage.setItem("levelPass", false);
     },
 
     /* -----
@@ -79,6 +88,7 @@ game.PlayerEntity = me.Entity.extend({
             if (keyCode === me.input.KEY.P) {
                 var x = document.getElementById("pauseMenu");
                 var y = document.getElementById("screen");
+                me.state.pause();
 
                 if (x.style.display === "none") {
                   x.style.display = "block";
@@ -86,28 +96,9 @@ game.PlayerEntity = me.Entity.extend({
                 } else {
                   x.style.display = "none";
                 }
-                // if (me.state.isPaused()) {
-                //     me.state.resume();
-                // }
-                // else {
-                //     me.state.pause();
-                // }
             }
         });
-        // if (me.input.isKeyPressed("pause"))
-        // {
-        //     var x = document.getElementById("pauseMenu");
-        //     var y = document.getElementById("screen");
 
-        //     if (x.style.display === "none") {
-        //       x.style.display = "block";
-        //       y.style.opacity = 0.5;
-        //       x.style.opacity = 1;
-        //     } else {
-        //       x.style.display = "none";
-        //       y.style.opacity = 1;
-        //     }
-        // }
         if (me.input.isKeyPressed("space"))
         {
             var y = document.getElementById("screen");
@@ -134,54 +125,60 @@ game.PlayerEntity = me.Entity.extend({
      * colision handler
      */
     onCollision : function (response) {
-        if(response.b.body.collisionType ==  me.collision.types.WORLD_SHAPE)
+        if (response.b.body.collisionType ==  me.collision.types.WORLD_SHAPE)
         {
-            if(response.b.id == 60)
+            if (response.b.id == 60)
             {
                 var x = document.getElementById("hint");
                 x.style.display = "block";
 
-                if(me.input.isKeyPressed("interact"))
+                if (me.input.isKeyPressed("interact"))
+                {
+                    showQuestion(2);
+                    sessionStorage.setItem("levelPass", true);
+                }
+
+                me.save.score += 1;
+                sessionStorage.setItem("tasks", me.save.score);
+                console.log("tasks: " + sessionStorage.tasks, "tips: " + sessionStorage.tips, "levelPass: " + sessionStorage.levelPass);
+                console.log(JSON.stringify(me.save));
+            }
+            if (response.b.id == 1)
+            {
+                var x = document.getElementById("hint");
+                x.style.display = "block";
+
+                if (me.input.isKeyPressed("interact"))
                 {
                     showQuestion(2);
                 }
             }
-            if(response.b.id == 1)
+            if (response.b.id == 1)
             {
                 var x = document.getElementById("hint");
                 x.style.display = "block";
 
-                if(me.input.isKeyPressed("interact"))
-                {
-                    showQuestion(2);
-                }
-            }
-            if(response.b.id == 1)
-            {
-                var x = document.getElementById("hint");
-                x.style.display = "block";
-
-                if(me.input.isKeyPressed("interact"))
+                if (me.input.isKeyPressed("interact"))
                 {
                     showQuestion(3);
                 }
             }
-            if(response.b.id == 1)
+            if (response.b.id == 1)
             {
                 var x = document.getElementById("hint");
                 x.style.display = "block";
 
-                if(me.input.isKeyPressed("interact"))
+                if (me.input.isKeyPressed("interact"))
                 {
                     showQuestion(4);
                 }
             }
-            if(response.b.id == 1)
+            if (response.b.id == 1)
             {
                 var x = document.getElementById("hint");
                 x.style.display = "block";
 
-                if(me.input.isKeyPressed("interact"))
+                if (me.input.isKeyPressed("interact"))
                 {
                     showQuestion(5);
                 }
