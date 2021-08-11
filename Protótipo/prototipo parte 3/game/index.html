@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Jogo Educativo</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="menu.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="game.css">
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head>
+
+<body>
+  <script>localStorage.setItem('enableTips', true);</script>
+
+  <div id="hint" style="display:none">Pressione a tecla "I" para interagir</div>
+
+  <div id="pauseMenu">MENU PRINCIPIAL
+    <div id="option1"> <button id="button" onclick="resume()">Retomar</button></div>
+    <div id="option"> <button id="button" onclick="">Dificuldade</button></div>
+    <div id="option"> <button id="button" onclick="">Estatísticas</button></div>
+    <div id="option"> <button id="button" onclick="disableTips()">Desativar/Ativar Dicas</button></div>
+    <div id="option"> <button id="button" onclick="reset()">Reiniciar</button></div>
+  </div>
+
+  <div style="position:relative; margin-top:30px"></div>
+
+  <div name="perguntas">
+    <div name="pergunta1">
+      <div class="gameMenu" id="1" style="display:none">
+        <div class="question"> Dadas as classes: Barco, Carro e ônibus, qual das opções seria uma possível classe pai para as
+          classes citadas.</div>
+        <div id="answer"><button id="answerButton1" onclick="reviewAnswer(false, 'answerButton1', 1)">a) Automóveis</button> </div>
+        <div id="answer"><button id="answerButton2" onclick="reviewAnswer(false, 'answerButton2', 1)">b) VeiculosMaritimos</button></div>
+        <div id="answer"><button id="answerButton3" onclick="reviewAnswer(true, 'answerButton3', 1)">c)  MeiosDeTransporte</button></div>
+        <div id="answer"><button id="answerButton4" onclick="reviewAnswer(false, 'answerButton4', 1)">d) TransportePublico</button></div>
+        <div id="resumeGame1" style="display:none"> <button id="button" onclick="resume(3, 1)">Retomar</button></div>
+        <div id="tip1" style="display:none"> <button id="button2" onclick="showTip(1)">Dicas</button></div>
+      </div>
+      <div class="tip" id="tipBox1" style="display:none">Dicas:
+        <div id="tipElement">
+          Lembre-se de que a classe pai precisa ter as característica comuns à todas as classes derivadas.
+        </div>
+        <div><button id="button" onclick="resume(2, 1)">Retomar</button></div>
+      </div>
+    </div>
+    <div name="pergunta2">
+      <div class="gameMenu" id="2" style="display:none">
+        <div class="question"> Qual dos conceitos de programação orientada a objetos que permite a criação de métodos com a mesma assinatura, porém com implementações diferentes?</div>
+        <div id="answer"><button id="answerButton5" onclick="reviewAnswer(false, 'answerButton5', 2)">a) Encapsulamento</button> </div>
+        <div id="answer"><button id="answerButton6" onclick="reviewAnswer(false, 'answerButton6', 2)">b) Herança</button></div>
+        <div id="answer"><button id="answerButton7" onclick="reviewAnswer(false, 'answerButton7', 2)">c) Interface</button></div>
+        <div id="answer"><button id="answerButton8" onclick="reviewAnswer(true, 'answerButton8', 2)">d) Polimorfismo</button></div>
+        <div id="resumeGame2" style="display:none"> <button id="button" onclick="resume(3, 2)">Retomar</button></div>
+        <div id="tip2" style="display:none"> <button id="button2" onclick="showTip(2)">Dicas</button></div>
+      </div>
+      <div class="tip" id="tipBox2" style="display:none">Dicas:
+        <div id="tipElement">
+          Para esta pergunta, pense na palavra que possa representar algo que permita múltiplas formas.
+        </div>
+        <div><button id="button" onclick="resume(2, 2)">Retomar</button></div>
+      </div>
+    </div>
+    <div name="pergunta3">
+      <div class="gameMenu" id="3" style="display:none">
+        <div class="question"> Na programação orientada a objetos, podemos definir classes sem qualquer pretensão de instanciar objetos. Nestas situações, essas classes são conhecidas como:</div>
+        <div id="answer"><button id="answerButton9" onclick="reviewAnswer(true, 'answerButton9', 3)">a) Abstratas</button> </div>
+        <div id="answer"><button id="answerButton10" onclick="reviewAnswer(false, 'answerButton10', 3)">b) Concretas</button></div>
+        <div id="answer"><button id="answerButton11" onclick="reviewAnswer(false, 'answerButton11', 3)">c) Protegidas</button></div>
+        <div id="answer"><button id="answerButton12" onclick="reviewAnswer(false, 'answerButton12', 3)">d) Privadas</button></div>
+        <div id="resumeGame3" style="display:none"> <button id="button" onclick="resume(3, 3)">Retomar</button></div>
+        <div id="tip3" style="display:none"> <button id="button2" onclick="showTip(3)">Dicas</button></div>
+      </div>
+      <div class="tip" id="tipBox3" style="display:none">Dicas:
+        <div id="tipElement">
+          Este é um tipo de classe modelo, que não pode ser instanciada e pode conter ou não métodos do mesmo tipo dela.
+        </div>
+        <div><button id="button" onclick="resume(2, 3)">Retomar</button></div>
+      </div>
+    </div>
+    <div name="pergunta4">
+      <div class="gameMenu" id="4" style="display:none">
+        <div class="question"> O princípio que auxilia a manutenibilidade dos sistemas e minimiza o impacto sobre o funcionamento do restante do sistema, é:</div>
+        <div id="answer"><button id="answerButton13" onclick="reviewAnswer(true, 'answerButton13', 4)">a) Encapsulamento</button> </div>
+        <div id="answer"><button id="answerButton14" onclick="reviewAnswer(false, 'answerButton14', 4)">b) Polimorfismo</button></div>
+        <div id="answer"><button id="answerButton15" onclick="reviewAnswer(false, 'answerButton15', 4)">c) Herança</button></div>
+        <div id="answer"><button id="answerButton16" onclick="reviewAnswer(false, 'answerButton16', 4)">d) Abstração</button></div>
+        <div id="resumeGame4" style="display:none"> <button id="button" onclick="resume(3, 4)">Retomar</button></div>
+        <div id="tip4" style="display:none"> <button id="button2" onclick="showTip(4)">Dicas</button></div>
+      </div>
+      <div class="tip" id="tipBox4" style="display:none">Dicas:
+        <div id="tipElement">
+          A ideia desse princípio é evitar repetição de código e facilitar a manutenção.
+        </div>
+        <div><button id="button" onclick="resume(2, 4)">Retomar</button></div>
+      </div>
+    </div>
+    <div name="pergunta5">
+      <div class="gameMenu" id="5" style="display:none">
+        <div class="question">Como é chamado, em orientação a objetos, o recurso em que uma classe define os moldes de métodos a serem implementados por classes herdeiras dessa classe?</div>
+        <div id="answer"><button id="answerButton17" onclick="reviewAnswer(false, 'answerButton17', 5)">a) Encapsulamento</button> </div>
+        <div id="answer"><button id="answerButton18" onclick="reviewAnswer(false, 'answerButton18', 5)">b) Polimorfismo</button></div>
+        <div id="answer"><button id="answerButton19" onclick="reviewAnswer(false, 'answerButton19', 5)">c) Herança múltipla</button></div>
+        <div id="answer"><button id="answerButton20" onclick="reviewAnswer(true, 'answerButton20', 5)">d) Interface</button></div>
+        <div id="resumeGame5" style="display:none"> <button id="button" onclick="resume(3, 5)">Retomar</button></div>
+        <div id="tip5" style="display:none"> <button id="button2" onclick="showTip(5)">Dicas</button></div>
+      </div>
+      <div class="tip" id="tipBox5" style="display:none">Dicas:
+        <div id="tipElement">
+          Este tipo de recurso é conhecido como um contrato que obriga a classe a implementar método(s).
+        </div>
+        <div><button id="button" onclick="resume(2, 5)">Retomar</button></div>
+      </div>
+    </div>
+  </div>
+
+  <iframe width="200" frameBorder="0" scrolling="no"></iframe>
+
+  <!-- melonJS Library -->
+  <script type="text/javascript" src="../../build/melonjs.js"></script>
+
+  <!-- Plugin(s) -->
+  <script type="text/javascript" src="../../plugins/debug/debugPanel.js"></script>
+
+  <!-- Game Scripts -->
+  <script type="text/javascript" src="js/game.js"></script>
+  <script type="text/javascript" src="js/resources.js"></script>
+  <script type="text/javascript" src="js/menu.js"></script>
+  <script type="text/javascript" src="js/questions.js"></script>
+
+  <script type="text/javascript" src="js/entities/entities.js"></script>
+
+  <script type="text/javascript" src="js/screens/play.js"></script>
+  <script type="text/javascript" src="js/screens/menu.js"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-database.js"></script>
+  <script src="js/firebase.js"></script>
+
+  <!-- Bootstrap -->
+  <script type="text/javascript">
+    me.device.onReady(function onReady() {
+      game.onload();
+    });
+  </script>
+</body>
+
+</html>

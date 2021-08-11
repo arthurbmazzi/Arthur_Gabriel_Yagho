@@ -1,0 +1,44 @@
+body {
+  /* Allow canvas to hit the edges of the browser viewport. */
+  margin: 0;
+}
+
+#screen canvas {
+  margin: auto;
+  /* Hide the gap for font descenders. */
+  display:block;
+}
+
+#initialScreen {
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+#hint {
+  background-color:yellowgreen;
+  bottom: 90px;
+  left: 390px;
+  font-size: larger;
+  font-weight: bold;
+  position: absolute;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+#tipElement {
+  border: 1px solid #d5d5d5;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
