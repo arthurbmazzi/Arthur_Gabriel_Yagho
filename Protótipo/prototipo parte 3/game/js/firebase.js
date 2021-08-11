@@ -1,4 +1,4 @@
-(function () {
+function initializeBD () {
     const firebaseConfig = {
         apiKey: "AIzaSyAZ-niOH2G1TNblAIzTgIcQzGYbvpJCK_4",
         authDomain: "jogooo-d4fc9.firebaseapp.com",
@@ -10,5 +10,5 @@
     };
 
     firebase.initializeApp(firebaseConfig);
-});
+};
 
