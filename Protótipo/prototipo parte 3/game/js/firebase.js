@@ -1,14 +1,55 @@
-function initializeBD () {
-    const firebaseConfig = {
-        apiKey: "AIzaSyAZ-niOH2G1TNblAIzTgIcQzGYbvpJCK_4",
-        authDomain: "jogooo-d4fc9.firebaseapp.com",
-        databaseURL: "https://jogooo-d4fc9-default-rtdb.firebaseio.com",
-        projectId: "jogooo-d4fc9",
-        storageBucket: "jogooo-d4fc9.appspot.com",
-        messagingSenderId: "533547861045",
-        appId: "1:533547861045:web:8f2b0b50cbaf4e80cf1d7c"
-    };
+function saveOnDB(userId, name) {
+    firebase
+        .database()
+        .ref("users/id: " + userId + "/name: " + name)
+        .set({
+            score: localStorage.score,
+            tasks: localStorage.tasks,
+            tips: localStorage.tips,
+            lastLevel: localStorage.currentLevel
+        });
+}
 
-    firebase.initializeApp(firebaseConfig);
-};
+function getOnDB(userId, name) {
+    var score = 0;
 
+    const dbRef = firebase.database().ref();
+    dbRef
+        .child("users")
+        .child(userId)
+        .child(name)
+        .get()
+        .then((snapshot) => {
+            score = snapshot.child("score");
+            localStorage.setItem("score", me.save.score);
+            localStorage.setItem("tasks", snapshot.child("tasks"));
+            localStorage.setItem("tips", snapshot.child("tips"));
+            localStorage.setItem("currentLevel", snapshot.child("lastLevel"));
+            localStorage.setItem("levelPass", false);
+        });
+
+    return score;
+}
+
+function existOnDB(userId, name) {
+    var exist = false;
+
+    const dbRef = firebase.database().ref();
+    dbRef
+        .child("users")
+        .child(userId)
+        .child(name)
+        .get()
+        .then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log(snapshot.val());
+                exist = true;
+            } else {
+                console.log("No data available");
+            }
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+    return exist;
+}
