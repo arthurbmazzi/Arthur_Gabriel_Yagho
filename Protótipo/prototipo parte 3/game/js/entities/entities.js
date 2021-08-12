@@ -45,12 +45,25 @@ game.PlayerEntity = me.Entity.extend({
 
         // chamada da tela de login
 
-        // buscar no firebase os valores e se não existirem colocar como 0
-        // se score não esta salvo então score = 0
-        me.save.score = 0;
-        //localStorage.setItem("tasks", me.save.score);
-        //localStorage.setItem("tips", 0);
-        localStorage.setItem("levelPass", false);
+        var userId = "1";
+        var name = "primeiroJogador";
+
+        var data = false;
+
+        //data = existOnDB(userId, name);
+
+        if (data)    {
+            //salva todas as informações do DB no localStorage
+            me.save.score = getOnDB(userId, name);
+        }
+        else {
+            me.save.score = 0;
+            localStorage.setItem("score", me.save.score);
+            localStorage.setItem("tasks", 0);
+            localStorage.setItem("tips", 0);
+            localStorage.setItem("currentLevel", 0);
+            localStorage.setItem("levelPass", false);
+        }
     },
 
     /* -----
