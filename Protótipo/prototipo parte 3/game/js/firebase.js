@@ -1,52 +1,54 @@
-function saveOnDB(userId, name) {
+function initializeOnDB(userId, name) {
     firebase
         .database()
         .ref("users/id: " + userId + "/name: " + name)
         .set({
-            score: localStorage.score,
-            tasks: localStorage.tasks,
-            tips: localStorage.tips,
-            lastLevel: localStorage.currentLevel
+            score: 0,
+            tasks: 0,
+            tips: 0,
+            lastLevel: 0
         });
 }
 
-function getOnDB(userId, name) {
+function saveOnDB(userId, name) {
+    var data = {
+        score: localStorage.score,
+        tasks: localStorage.tasks,
+        tips: localStorage.tips,
+        lastLevel: localStorage.currentLevel
+    }
+
+    var updates = {}
+    updates["users/id: " + userId + "/name: " + name] = data
+
+    firebase.database().ref().update(updates);
+}
+
+async function getOnDB(userId, name) {
     var score = 0;
 
-    const dbRef = firebase.database().ref();
-    dbRef
-        .child("users")
-        .child(userId)
-        .child(name)
-        .get()
+    const dbRef = await firebase.database().ref("users/id: " + userId + "/name: " + name);
+    dbRef.get()
         .then((snapshot) => {
-            score = snapshot.child("score");
-            localStorage.setItem("score", me.save.score);
-            localStorage.setItem("tasks", snapshot.child("tasks"));
-            localStorage.setItem("tips", snapshot.child("tips"));
-            localStorage.setItem("currentLevel", snapshot.child("lastLevel"));
+            score = snapshot.val().score;
+            localStorage.setItem("score", score);
+            localStorage.setItem("tasks", snapshot.val().tasks);
+            localStorage.setItem("tips", snapshot.val().tips);
+            localStorage.setItem("currentLevel", snapshot.val().lastLevel);
             localStorage.setItem("levelPass", false);
         });
 
     return score;
 }
 
-function existOnDB(userId, name) {
+async function existOnDB(userId, name) {
     var exist = false;
 
-    const dbRef = firebase.database().ref();
-    dbRef
-        .child("users")
-        .child(userId)
-        .child(name)
-        .get()
+    const dbRef = await firebase.database().ref("users/id: " + userId + "/name: " + name);
+    dbRef.get()
         .then((snapshot) => {
-            if (snapshot.exists()) {
-                console.log(snapshot.val());
-                exist = true;
-            } else {
-                console.log("No data available");
-            }
+            console.log(snapshot.val());
+            exist = true;
         })
         .catch((error) => {
             console.error(error);
