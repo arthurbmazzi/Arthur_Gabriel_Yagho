@@ -43,6 +43,6 @@ var game = {
         me.pool.register("mainPlayer", game.PlayerEntity);
 
         // switch to PLAY state
-        me.state.change(me.state.MENU);
+        me.state.change(me.state.MENU);        
     }
 };

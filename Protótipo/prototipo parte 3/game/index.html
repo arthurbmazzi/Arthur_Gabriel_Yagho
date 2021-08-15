@@ -21,7 +21,7 @@
     <div id="option"> <button id="button" onclick="">Dificuldade</button></div>
     <div id="option"> <button id="button" onclick="">Estatísticas</button></div>
     <div id="option"> <button id="button" onclick="disableTips()">Desativar/Ativar Dicas</button></div>
-    <div id="option"> <button id="button" onclick="reset()">Reiniciar</button></div>
+    <div id="option"> <button id="button" onclick="showQuestionsBox()">Seção de Dúvidas</button></div>
   </div>
 
   <div style="position:relative; margin-top:30px"></div>
@@ -113,6 +113,13 @@
         <div><button id="button" onclick="resume(2, 5)">Retomar</button></div>
       </div>
     </div>
+  </div>
+
+  <div id="emailBox" style="display:none">
+    <input type="text" id="playerName" placeholder="Digite seu nome:">
+    <input type="text" id="playerQuestion" placeholder="Digite sua pergunta:">
+    <button id="ResumeFromEmailBox">Retomar</button>
+    <button id="sendEmail" onclick="sendEmail()">Enviar</button>
   </div>
 
   <iframe width="200" frameBorder="0" scrolling="no"></iframe>

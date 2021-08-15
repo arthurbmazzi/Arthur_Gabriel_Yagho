@@ -27,10 +27,13 @@ function resume(number, questionNumber)
     }
 }
 
-function reset()
-{
+function showQuestionsBox()
+{    
     var x = document.getElementById("pauseMenu");
     x.style.display = "none";
+
+    var y = document.getElementById("emailBox");
+    y.style.display = "block";
 }
 
 function disableTips()
@@ -43,4 +46,11 @@ function disableTips()
         localStorage.setItem("enableTips", true);
     }
     resume();
+}
+
+function sendEmail()
+{
+    var inputName = document.querySelector("#playerName");
+    var inputQuestion = document.querySelector("#playerQuestion");
+    window.open(`mailto:teste@hotmail.com?subject=${"Dúvida no jogo - " + inputName.value}&body=${inputQuestion.value}`);
 }
