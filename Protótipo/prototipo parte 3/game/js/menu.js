@@ -28,12 +28,21 @@ function resume(number, questionNumber)
 }
 
 function showQuestionsBox()
-{    
-    var x = document.getElementById("pauseMenu");
-    x.style.display = "none";
+{   
+    me.input.unbindKey(me.input.KEY.I);
+    me.input.unbindKey(me.input.KEY.P);
 
     var y = document.getElementById("emailBox");
     y.style.display = "block";
+}
+
+function resumeFromEmail()
+{ 
+    var y = document.getElementById("emailBox");
+    y.style.display = "none";
+
+    me.input.bindKey(me.input.KEY.P,  "pause", true);
+    me.input.bindKey(me.input.KEY.I, "interact");
 }
 
 function disableTips()
@@ -50,7 +59,13 @@ function disableTips()
 
 function sendEmail()
 {
+    me.input.bindKey(me.input.KEY.P,  "pause", true);
+    me.input.bindKey(me.input.KEY.I, "interact");
+
+    var y = document.getElementById("emailBox");
+    y.style.display = "none";
+
     var inputName = document.querySelector("#playerName");
     var inputQuestion = document.querySelector("#playerQuestion");
-    window.open(`mailto:teste@hotmail.com?subject=${"Dúvida no jogo - " + inputName.value}&body=${inputQuestion.value}`);
+    window.open(`mailto:jogoOODevs@hotmail.com?subject=${"Dúvida no jogo - " + inputName.value}&body=${inputQuestion.value}`);
 }

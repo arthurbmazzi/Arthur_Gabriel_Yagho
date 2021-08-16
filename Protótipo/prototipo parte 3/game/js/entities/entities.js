@@ -25,7 +25,6 @@ game.PlayerEntity = me.Entity.extend({
         me.input.bindKey(me.input.KEY.UP,    "up");
         me.input.bindKey(me.input.KEY.DOWN,  "down");
         me.input.bindKey(me.input.KEY.P,  "pause", true);
-        me.input.bindKey(me.input.KEY.SPACE, "space");
         me.input.bindKey(me.input.KEY.I, "interact");
 
         // the main player spritesheet
@@ -110,15 +109,6 @@ game.PlayerEntity = me.Entity.extend({
                 }
             }
         });
-
-        if (me.input.isKeyPressed("space"))
-        {
-            var y = document.getElementById("screen");
-            y.style.display = "block";
-            document.getElementById("initialScreen").style.display = "none";
-
-            //me.input.bindKey(me.input.KEY.SPACE,  "other");
-        }
 
         // apply physics to the body (this moves the entity)
         this.body.update(dt);
