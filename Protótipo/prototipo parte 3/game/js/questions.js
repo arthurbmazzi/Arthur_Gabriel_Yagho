@@ -33,5 +33,15 @@ function showTip(question) {
     {
         var z = document.getElementById("tipBox" + question);
         z.style.display = "block";
-    }
+    }   
+
+    var totalTips = localStorage.getItem("tips");
+
+    var addAux = parseInt(totalTips);
+    var add = addAux + 1;
+
+    if(totalTips == localStorage.getItem("tipsLeft"))
+        localStorage.setItem("enableTips", false)
+    else
+        localStorage.setItem("tips", add)
 }

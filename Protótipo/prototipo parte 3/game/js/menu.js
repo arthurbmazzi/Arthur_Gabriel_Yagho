@@ -69,3 +69,44 @@ function sendEmail()
     var inputQuestion = document.querySelector("#playerQuestion");
     window.open(`mailto:jogoOODevs@hotmail.com?subject=${"Dúvida no jogo - " + inputName.value}&body=${inputQuestion.value}`);
 }
+
+function EscolherDificuldade()
+{
+    var y = document.getElementById("escolheDificuldade");
+    y.style.display = "block";
+}
+
+function setDif(number)
+{
+    if(number === 1)
+        localStorage.setItem("dificuldade", "Fácil")
+    if(number === 3)
+        localStorage.setItem("dificuldade", "Difícil")
+
+    var y = document.getElementById("escolheDificuldade");
+    y.style.display = "none";
+
+    localStorage.setItem("tipsLeft", getDicas(number));
+}
+
+function getDicas(number)
+{
+    if(number === 1)
+        return 5;
+    else if(number === 2)
+        return 3;
+    else
+        return 1;
+}
+
+function ShowStats()
+{
+    var x = document.getElementById("pauseMenu");
+    x.style.display = "none";
+
+    var y = document.getElementById("stats");
+    y.style.display = "block";
+
+    document.getElementById("stats").innerHTML += " " + localStorage.getItem("dificuldade") + "\n\n" + 
+    "Total de dicas: " + localStorage.getItem("tipsLeft")
+}

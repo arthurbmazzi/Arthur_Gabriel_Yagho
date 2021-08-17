@@ -18,8 +18,8 @@
 
   <div id="pauseMenu">MENU PRINCIPIAL
     <div id="option1"> <button id="button" onclick="resume()">Retomar</button></div>
-    <div id="option"> <button id="button" onclick="">Dificuldade</button></div>
-    <div id="option"> <button id="button" onclick="">Estatísticas</button></div>
+    <div id="option"> <button id="button" onclick="EscolherDificuldade()">Dificuldade</button></div>
+    <div id="option"> <button id="button" onclick="ShowStats()">Estatísticas</button></div>
     <div id="option"> <button id="button" onclick="disableTips()">Desativar/Ativar Dicas</button></div>
     <div id="option"> <button id="button" onclick="showQuestionsBox()">Seção de Dúvidas</button></div>
   </div>
@@ -122,6 +122,17 @@
       <button id="ResumeFromEmailBox" onclick="resumeFromEmail()">Retomar</button>
       <button id="sendEmail" onclick="sendEmail()">Enviar</button>
     </div>
+  </div>
+
+  <div id="stats">
+    Dificuldade: 
+  </div>
+  
+  <div id="escolheDificuldade">
+    Escolha a dificuldade:
+    <button id="easy" onclick="setDif(1)">Fácil</button>
+    <button id="medium" onclick="setDif(2)">Normal</button>
+    <button id="hard" onclick="setDif(3)">Difícil</button>
   </div>
 
   <iframe width="200" frameBorder="0" scrolling="no"></iframe>

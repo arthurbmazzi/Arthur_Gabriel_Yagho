@@ -4,6 +4,8 @@ game.PlayScreen = me.Stage.extend({
      */
     onResetEvent: function() {
 
+        EscolherDificuldade();
+
         // disable gravity
         me.game.world.gravity.set(0, 0);
 

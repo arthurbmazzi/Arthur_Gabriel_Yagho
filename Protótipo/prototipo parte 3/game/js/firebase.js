@@ -35,7 +35,9 @@ async function getOnDB(userId, name) {
             localStorage.setItem("tasks", snapshot.val().tasks);
             localStorage.setItem("tips", snapshot.val().tips);
             localStorage.setItem("currentLevel", snapshot.val().lastLevel);
-            localStorage.setItem("levelPass", false);
+            localStorage.setItem("levelPass", false);            
+            localStorage.setItem("dificuldade", "Normal");
+            localStorage.setItem("tipsLeft", "0");
         });
 
     return score;
