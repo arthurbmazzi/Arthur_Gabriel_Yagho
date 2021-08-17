@@ -123,3 +123,18 @@ function resumeD1(){
     var y = document.getElementById("didatico1");
     y.style.display = "none";
 }
+
+function resumeD2(){
+    var y = document.getElementById("didatico2");
+    y.style.display = "none";
+}
+
+function resumeD3(){
+    var y = document.getElementById("didatico3");
+    y.style.display = "none";
+}
+
+function resumeD4(){
+    var y = document.getElementById("didatico4");
+    y.style.display = "none";
+}
