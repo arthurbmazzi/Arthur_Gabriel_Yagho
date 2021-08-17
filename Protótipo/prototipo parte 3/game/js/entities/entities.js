@@ -351,8 +351,47 @@ game.PlayerEntity = me.Entity.extend({
             }
             if (response.b.id == 60)
             {
-                var x = document.getElementById("didatico1");
+                var x = document.getElementById("hint");
                 x.style.display = "block";
+
+                if (me.input.isKeyPressed("interact"))
+                {
+                    var x = document.getElementById("didatico1");
+                    x.style.display = "block";
+                }
+            }
+            if (response.b.id == 364)
+            {
+                var x = document.getElementById("hint");
+                x.style.display = "block";
+
+                if (me.input.isKeyPressed("interact"))
+                {
+                    var x = document.getElementById("didatico2");
+                    x.style.display = "block";
+                }
+            }
+            if (response.b.id == 365)
+            {
+                var x = document.getElementById("hint");
+                x.style.display = "block";
+
+                if (me.input.isKeyPressed("interact"))
+                {
+                    var x = document.getElementById("didatico3");
+                    x.style.display = "block";
+                }
+            }
+            if (response.b.id == 59)
+            {
+                var x = document.getElementById("hint");
+                x.style.display = "block";
+
+                if (me.input.isKeyPressed("interact"))
+                {
+                    var x = document.getElementById("didatico4");
+                    x.style.display = "block";
+                }
             }
         }
         return true;

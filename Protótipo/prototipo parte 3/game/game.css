@@ -93,14 +93,14 @@
 }
 
 .didatico{
-    position: absolute;
+    position: absolute;    
     margin: auto;
     top:0;
     bottom: 0;
     left: 0;
     right: 0;
     width: 700px;
-    height: 400px;
+    height: 420px;
     background-color:mediumseagreen;
     font-weight: bold;
     font-size: large;
@@ -111,8 +111,25 @@
 }
 
 #buttonD1 {
-    display:flex;
-    position:absolute;
-    background-color:aqua;
-    margin:auto;
+    display: flex;
+    position: absolute;
+    margin-left: 20px;
+    margin: auto;
+    width: 200px;
+    padding-left: 20px;
+    padding-right: 20px;  
+    text-align: center;
+    justify-content: center;
+    margin-top: 373px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#img2 {
+    width: 440px;
+}
+
+#img4 {
+    height: 408px;
+    margin-top: 10px;
 }
