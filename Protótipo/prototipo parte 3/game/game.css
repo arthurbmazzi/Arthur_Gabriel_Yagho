@@ -37,14 +37,22 @@
 #answerButton5, #answerButton6, #answerButton7, #answerButton8,
 #answerButton9, #answerButton10, #answerButton11, #answerButton12,
 #answerButton13, #answerButton14, #answerButton15, #answerButton16,
-#answerButton17, #answerButton18, #answerButton19, #answerButton20{    
+#answerButton17, #answerButton18, #answerButton19, #answerButton20,
+#answerButton21, #answerButton22, #answerButton23, #answerButton24,
+#answerButton25, #answerButton26, #answerButton27, #answerButton28,
+#answerButton29, #answerButton30, #answerButton31, #answerButton32,
+#answerButton33, #answerButton34, #answerButton35, #answerButton36,
+#answerButton37, #answerButton38, #answerButton39, #answerButton40,
+#answerButton41, #answerButton42, #answerButton43, #answerButton44{    
     width: 750px;
     text-align: left;
     padding-left: 10px;
     height: 40px;
 }
 
-#resumeGame1, #resumeGame2, #resumeGame3, #resumeGame4, #resumeGame5 {
+#resumeGame1, #resumeGame2, #resumeGame3, #resumeGame4, #resumeGame5,
+#resumeGame6, #resumeGame7, #resumeGame8, #resumeGame9, #resumeGame10,
+#resumeGame11 {
     font-weight: normal;
     margin-top: 20px;
     display: flex;    
@@ -54,7 +62,7 @@
     float:left;
 }
 
-#tip1, #tip2, #tip3, #tip4, #tip5 {
+#tip1, #tip2, #tip3, #tip4, #tip5, #tip6, #tip7, #tip8, #tip9, #tip10, #tip11{
     font-weight: normal;
     margin-top: 20px;
     display: flex;    
@@ -63,7 +71,7 @@
     justify-content: center;   
 }
 
-#tipBox1, #tipBox2, #tipBox3, #tipBox4,#tipBox5 {
+#tipBox1, #tipBox2, #tipBox3, #tipBox4,#tipBox5, #tipBox6, #tipBox7, #tipBox8, #tipBox9, #tipBox10, #tipBox11 {
     position: absolute;
     border: 15px solid #d5d5d5;
     top:0;

@@ -127,7 +127,7 @@ game.PlayerEntity = me.Entity.extend({
     onCollision : function (response) {
         if (response.b.body.collisionType ==  me.collision.types.WORLD_SHAPE)
         {
-            if (response.b.id == 60)
+            if (response.b.id == 348)
             {
                 var x = document.getElementById("hint");
                 x.style.display = "block";
@@ -222,6 +222,132 @@ game.PlayerEntity = me.Entity.extend({
                 }
                 console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
                 localStorage.setItem("levelPass", false);
+            }
+            if (response.b.id == 165)
+            {
+                var x = document.getElementById("hint");
+                x.style.display = "block";
+
+                if (me.input.isKeyPressed("interact"))
+                {
+                    showQuestion(6);
+                    localStorage.setItem("levelPass", true);
+                    if (localStorage.levelPass)
+                    {
+                        me.save.score = 6;
+                        localStorage.setItem("tasks", me.save.score);
+                    }
+                }
+
+                console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
+                console.log(JSON.stringify(me.save));
+                localStorage.setItem("levelPass", false);
+                saveOnDB(userId, name);
+            }
+            if (response.b.id == 212)
+            {
+                var x = document.getElementById("hint");
+                x.style.display = "block";
+
+                if (me.input.isKeyPressed("interact"))
+                {
+                    showQuestion(7);
+                    localStorage.setItem("levelPass", true);
+                    if (localStorage.levelPass)
+                    {
+                        me.save.score = 7;
+                        localStorage.setItem("tasks", me.save.score);
+                    }
+                }
+
+                console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
+                console.log(JSON.stringify(me.save));
+                localStorage.setItem("levelPass", false);
+                saveOnDB(userId, name);
+            }
+            if (response.b.id == 234)
+            {
+                var x = document.getElementById("hint");
+                x.style.display = "block";
+
+                if (me.input.isKeyPressed("interact"))
+                {
+                    showQuestion(8);
+                    localStorage.setItem("levelPass", true);
+                    if (localStorage.levelPass)
+                    {
+                        me.save.score = 8;
+                        localStorage.setItem("tasks", me.save.score);
+                    }
+                }
+
+                console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
+                console.log(JSON.stringify(me.save));
+                localStorage.setItem("levelPass", false);
+                saveOnDB(userId, name);
+            }
+            if (response.b.id == 297)
+            {
+                var x = document.getElementById("hint");
+                x.style.display = "block";
+
+                if (me.input.isKeyPressed("interact"))
+                {
+                    showQuestion(9);
+                    localStorage.setItem("levelPass", true);
+                    if (localStorage.levelPass)
+                    {
+                        me.save.score = 9;
+                        localStorage.setItem("tasks", me.save.score);
+                    }
+                }
+
+                console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
+                console.log(JSON.stringify(me.save));
+                localStorage.setItem("levelPass", false);
+                saveOnDB(userId, name);
+            }
+            if (response.b.id == 249)
+            {
+                var x = document.getElementById("hint");
+                x.style.display = "block";
+
+                if (me.input.isKeyPressed("interact"))
+                {
+                    showQuestion(10);
+                    localStorage.setItem("levelPass", true);
+                    if (localStorage.levelPass)
+                    {
+                        me.save.score = 10;
+                        localStorage.setItem("tasks", me.save.score);
+                    }
+                }
+
+                console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
+                console.log(JSON.stringify(me.save));
+                localStorage.setItem("levelPass", false);
+                saveOnDB(userId, name);
+            }
+            if (response.b.id == 308)
+            {
+                var x = document.getElementById("hint");
+                x.style.display = "block";
+
+                if (me.input.isKeyPressed("interact"))
+                {
+                    showQuestion(11);
+                    localStorage.setItem("levelPass", true);
+                    if (localStorage.levelPass)
+                    {
+                        me.save.score = 11;
+                        localStorage.setItem("tasks", me.save.score);
+                    }
+                }
+
+                console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
+                console.log(JSON.stringify(me.save));
+                localStorage.setItem("levelPass", false);
+                saveOnDB(userId, name);
             }
         }
         return true;
