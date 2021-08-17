@@ -1,7 +1,7 @@
-function initializeOnDB(userId, name) {
+function initializeOnDB(userId) {
     firebase
         .database()
-        .ref("users/id: " + userId + "/name: " + name)
+        .ref("users/id: " + userId)
         .set({
             score: 0,
             tasks: 0,
@@ -10,7 +10,7 @@ function initializeOnDB(userId, name) {
         });
 }
 
-function saveOnDB(userId, name) {
+function saveOnDB(userId) {
     var data = {
         score: localStorage.score,
         tasks: localStorage.tasks,
@@ -19,15 +19,15 @@ function saveOnDB(userId, name) {
     }
 
     var updates = {}
-    updates["users/id: " + userId + "/name: " + name] = data
+    updates["users/id: " + userId] = data
 
     firebase.database().ref().update(updates);
 }
 
-async function getOnDB(userId, name) {
+async function getOnDB(userId) {
     var score = 0;
 
-    const dbRef = await firebase.database().ref("users/id: " + userId + "/name: " + name);
+    const dbRef = await firebase.database().ref("users/id: " + userId);
     dbRef.get()
         .then((snapshot) => {
             score = snapshot.val().score;
@@ -43,10 +43,10 @@ async function getOnDB(userId, name) {
     return score;
 }
 
-async function existOnDB(userId, name) {
+async function existOnDB(userId) {
     var exist = false;
 
-    const dbRef = await firebase.database().ref("users/id: " + userId + "/name: " + name);
+    const dbRef = await firebase.database().ref("users/id: " + userId);
     dbRef.get()
         .then((snapshot) => {
             console.log(snapshot.val());
