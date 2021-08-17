@@ -103,7 +103,7 @@ body {
   right: 0;
   margin: auto;
   width: 300px;
-  height: 100px;  
+  height: 120px;  
   border-radius: 25px;
   background-color:mediumseagreen;
   z-index: 10;
@@ -114,6 +114,11 @@ body {
   font-weight: bold;
   font-size: large;
   opacity: 1 !important;
+}
+
+#resumeFromBox {
+  display: flex;
+  margin-top: 20px;
 }
 
 #escolheDificuldade {
@@ -148,7 +153,6 @@ body {
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-
 }
 
 #medium{

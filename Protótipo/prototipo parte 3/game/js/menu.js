@@ -109,4 +109,12 @@ function ShowStats()
 
     document.getElementById("stats").innerText += " " + localStorage.getItem("dificuldade") + "\n\n" + 
     "Total de dicas: " + localStorage.getItem("tipsLeft")
+    
+    document.getElementById('stats').innerHTML += '<button id="resumeFromBox" onclick="resumeFromBox()">Retomar</button>';
+}
+
+function resumeFromBox()
+{
+    var y = document.getElementById("stats");
+    y.style.display = "none";
 }
