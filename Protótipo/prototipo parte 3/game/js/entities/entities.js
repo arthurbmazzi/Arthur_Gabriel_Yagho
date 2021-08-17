@@ -5,9 +5,10 @@
 /*                                                                                  */
 /************************************************************************************/
 var userId = "1";
+var name = "teste";
 
 game.PlayerEntity = me.Entity.extend({
-    init: function(x, y, settings) {
+    init: function (x, y, settings) {
         // call the constructor
         this._super(me.Entity, "init", [x, y, settings]);
 
@@ -19,15 +20,15 @@ game.PlayerEntity = me.Entity.extend({
         me.game.viewport.follow(this, me.game.viewport.AXIS.BOTH);
 
         // enable keyboard
-        me.input.bindKey(me.input.KEY.LEFT,  "left");
+        me.input.bindKey(me.input.KEY.LEFT, "left");
         me.input.bindKey(me.input.KEY.RIGHT, "right");
-        me.input.bindKey(me.input.KEY.UP,    "up");
-        me.input.bindKey(me.input.KEY.DOWN,  "down");
-        me.input.bindKey(me.input.KEY.P,  "pause", true);
+        me.input.bindKey(me.input.KEY.UP, "up");
+        me.input.bindKey(me.input.KEY.DOWN, "down");
+        me.input.bindKey(me.input.KEY.P, "pause", true);
         me.input.bindKey(me.input.KEY.I, "interact");
 
         // the main player spritesheet
-        var texture =  new me.video.renderer.Texture(
+        var texture = new me.video.renderer.Texture(
             { framewidth: 32, frameheight: 64 },
             me.loader.getImage("Sprite")
         );
@@ -35,26 +36,31 @@ game.PlayerEntity = me.Entity.extend({
         // create a new sprite object
         this.renderable = texture.createAnimationFromName([0]);
 
-        // define an additional walking animation
-        // this.renderable.addAnimation("down_walk", []);
-        // this.renderable.addAnimation("left_walk", []);
-        // this.renderable.addAnimation("right_walk", []);
-        // this.renderable.addAnimation("up_walk", []);
-
         // set the renderable position to bottom center
         this.anchorPoint.set(0.5, 0.5);
 
+        initializeOnDB(name);
+
         // chamada da tela de login
+        // Login(name, 123);
+
+        // getNumIds((response) => {
+        //     userId = response;
+        // });
+        // userId++;
+
+        //Register("teste", 111, userId);
+
+        //updateNumIds(userId);
 
         var data = false;
 
-        data = existOnDB(userId);
+        data = existOnDB(name);
 
-        if (data)    {
+        if (data) {
             //salva todas as informações do DB no localStorage
-            getOnDB(userId);
-        }
-        else {
+            //getOnDB(userId);
+        } else {
             localStorage.setItem("score", 0);
             localStorage.setItem("tasks", 0);
             localStorage.setItem("tips", 0);
@@ -68,8 +74,7 @@ game.PlayerEntity = me.Entity.extend({
         update the player pos
 
     ------            */
-    update : function (dt) {
-
+    update: function (dt) {
         //this.renderable.setCurrentAnimation("up_walk");
 
         if (me.input.isKeyPressed("left")) {
@@ -100,10 +105,10 @@ game.PlayerEntity = me.Entity.extend({
                 var y = document.getElementById("screen");
 
                 if (x.style.display === "none") {
-                  x.style.display = "block";
-                  x.style.opacity = 1;
+                    x.style.display = "block";
+                    x.style.opacity = 1;
                 } else {
-                  x.style.display = "none";
+                    x.style.display = "none";
                 }
             }
         });
@@ -132,95 +137,101 @@ game.PlayerEntity = me.Entity.extend({
                 var x = document.getElementById("hint");
                 x.style.display = "block";
 
-                if (me.input.isKeyPressed("interact"))
-                {
+                if (me.input.isKeyPressed("interact")) {
                     showQuestion(1);
                     localStorage.setItem("levelPass", true);
-                    if (localStorage.levelPass && localStorage.tasks === "0")
-                    {
+                    if (localStorage.levelPass && localStorage.tasks === "0") {
                         localStorage.setItem("tasks", 1);
                         localStorage.setItem("score", 10);
                         saveOnDB(userId);
                     }
                 }
-                console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
+                console.log(
+                    "tasks: " + localStorage.tasks,
+                    "tips: " + localStorage.tips,
+                    "levelPass: " + localStorage.levelPass
+                );
                 localStorage.setItem("levelPass", false);
             }
-            if (response.b.id == 102)
-            {
+            if (response.b.id == 102) {
                 var x = document.getElementById("hint");
                 x.style.display = "block";
 
-                if (me.input.isKeyPressed("interact"))
-                {
+                if (me.input.isKeyPressed("interact")) {
                     showQuestion(2);
                     localStorage.setItem("levelPass", true);
                     console.log();
-                    if (localStorage.levelPass && localStorage.tasks === "1")
-                    {
+                    if (localStorage.levelPass && localStorage.tasks === "1") {
                         localStorage.setItem("tasks", 2);
                         localStorage.setItem("score", 20);
                         saveOnDB(userId);
                     }
                 }
-                console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
+                console.log(
+                    "tasks: " + localStorage.tasks,
+                    "tips: " + localStorage.tips,
+                    "levelPass: " + localStorage.levelPass
+                );
                 localStorage.setItem("levelPass", false);
             }
-            if (response.b.id == 142)
-            {
+            if (response.b.id == 142) {
                 var x = document.getElementById("hint");
                 x.style.display = "block";
 
-                if (me.input.isKeyPressed("interact"))
-                {
+                if (me.input.isKeyPressed("interact")) {
                     showQuestion(3);
                     localStorage.setItem("levelPass", true);
-                    if (localStorage.levelPass && localStorage.tasks === "2")
-                    {
+                    if (localStorage.levelPass && localStorage.tasks === "2") {
                         localStorage.setItem("tasks", 3);
                         localStorage.setItem("score", 30);
                         saveOnDB(userId);
                     }
                 }
-                console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
+                console.log(
+                    "tasks: " + localStorage.tasks,
+                    "tips: " + localStorage.tips,
+                    "levelPass: " + localStorage.levelPass
+                );
                 localStorage.setItem("levelPass", false);
             }
-            if (response.b.id == 107)
-            {
+            if (response.b.id == 107) {
                 var x = document.getElementById("hint");
                 x.style.display = "block";
 
-                if (me.input.isKeyPressed("interact"))
-                {
+                if (me.input.isKeyPressed("interact")) {
                     showQuestion(4);
                     localStorage.setItem("levelPass", true);
-                    if (localStorage.levelPass && localStorage.tasks === "3")
-                    {
+                    if (localStorage.levelPass && localStorage.tasks === "3") {
                         localStorage.setItem("tasks", 4);
                         localStorage.setItem("score", 40);
                         saveOnDB(userId);
                     }
                 }
-                console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
+                console.log(
+                    "tasks: " + localStorage.tasks,
+                    "tips: " + localStorage.tips,
+                    "levelPass: " + localStorage.levelPass
+                );
                 localStorage.setItem("levelPass", false);
             }
-            if (response.b.id == 138)
-            {
+            if (response.b.id == 138) {
                 var x = document.getElementById("hint");
                 x.style.display = "block";
 
-                if (me.input.isKeyPressed("interact"))
-                {
+                if (me.input.isKeyPressed("interact")) {
                     showQuestion(5);
                     localStorage.setItem("levelPass", true);
-                    if (localStorage.levelPass && localStorage.tasks === "4")
-                    {
+                    if (localStorage.levelPass && localStorage.tasks === "4") {
                         localStorage.setItem("tasks", 5);
                         localStorage.setItem("score", 50);
                         saveOnDB(userId);
                     }
                 }
-                console.log("tasks: " + localStorage.tasks, "tips: " + localStorage.tips, "levelPass: " + localStorage.levelPass);
+                console.log(
+                    "tasks: " + localStorage.tasks,
+                    "tips: " + localStorage.tips,
+                    "levelPass: " + localStorage.levelPass
+                );
                 localStorage.setItem("levelPass", false);
             }
             if (response.b.id == 165)
