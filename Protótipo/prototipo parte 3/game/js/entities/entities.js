@@ -349,6 +349,11 @@ game.PlayerEntity = me.Entity.extend({
                 localStorage.setItem("levelPass", false);
                 saveOnDB(userId, name);
             }
+            if (response.b.id == 60)
+            {
+                var x = document.getElementById("didatico1");
+                x.style.display = "block";
+            }
         }
         return true;
     }

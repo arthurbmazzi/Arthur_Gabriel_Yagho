@@ -118,3 +118,8 @@ function resumeFromBox()
     var y = document.getElementById("stats");
     y.style.display = "none";
 }
+
+function resumeD1(){
+    var y = document.getElementById("didatico1");
+    y.style.display = "none";
+}
