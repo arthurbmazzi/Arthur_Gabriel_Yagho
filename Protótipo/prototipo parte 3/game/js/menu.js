@@ -107,6 +107,6 @@ function ShowStats()
     var y = document.getElementById("stats");
     y.style.display = "block";
 
-    document.getElementById("stats").innerHTML += " " + localStorage.getItem("dificuldade") + "\n\n" + 
+    document.getElementById("stats").innerText += " " + localStorage.getItem("dificuldade") + "\n\n" + 
     "Total de dicas: " + localStorage.getItem("tipsLeft")
 }
