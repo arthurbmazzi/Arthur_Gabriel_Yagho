@@ -1,7 +1,68 @@
 describe("Entity", function () {
     var entity;
 
-    it("can load the image", function (done) {
+    //Testes de carregamento das imagens para material didático
+    it("material didatico 1", function (done) {
+        me.loader.load({
+            "name"  : "conceitos",
+            "type"  : "image",
+            "src"   : "tests/data/img/conceitos.PNG"
+        },
+        function () {
+            expect(true).toBe(true);
+            done();
+        },
+        function () {
+            throw new Error("Failed to load `conceitos.PNG`");
+        });
+    });
+
+    it("material didatico 2", function (done) {
+        me.loader.load({
+            "name"  : "ClasseObjetos",
+            "type"  : "image",
+            "src"   : "tests/data/img/ClasseObjetos.jpg"
+        },
+        function () {
+            expect(true).toBe(true);
+            done();
+        },
+        function () {
+            throw new Error("Failed to load `ClasseObjetos.jpg`");
+        });
+    });
+
+    it("material didatico 3", function (done) {
+        me.loader.load({
+            "name"  : "agregação",
+            "type"  : "image",
+            "src"   : "tests/data/img/agregação.png"
+        },
+        function () {
+            expect(true).toBe(true);
+            done();
+        },
+        function () {
+            throw new Error("Failed to load `agregação.png`");
+        });
+    });
+
+    it("material didatico 4", function (done) {
+        me.loader.load({
+            "name"  : "diagramaHerança",
+            "type"  : "image",
+            "src"   : "tests/data/img/diagramaHerança.png"
+        },
+        function () {
+            expect(true).toBe(true);
+            done();
+        },
+        function () {
+            throw new Error("Failed to load `diagramaHerança.png`");
+        });
+    });
+
+    it("material didatico 5", function (done) {
         me.loader.load({
             "name"  : "rect",
             "type"  : "image",
@@ -14,7 +75,7 @@ describe("Entity", function () {
         function () {
             throw new Error("Failed to load `rect.png`");
         });
-    });
+    });    
 
     it("can be created", function () {
         entity = new me.Entity(100, 100, {

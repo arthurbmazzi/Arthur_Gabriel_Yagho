@@ -65,6 +65,8 @@
     "cheerio": "^1.0.0-rc.3",
     "eslint": "^7.6.0",
     "ghpages": "0.0.10",
+    "jasmine": "^3.9.0",
+    "jasmine-browser-runner": "^0.8.0",
     "jasmine-core": "^3.6.0",
     "jsdoc": "^3.6.5",
     "karma": "^5.1.1",

@@ -8,16 +8,17 @@
         <script type="text/javascript" src="node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
         <script type="text/javascript" src="node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
         <script type="text/javascript" src="node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
-
+        <script type="text/javascript" src="node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
         <!-- include source files here... -->
         <script type="text/javascript" src="build/melonjs.js"></script>
+        <script type="text/javascript" src="../game/js/questions.js"></script>
+
         <script type="text/javascript" src="plugins/debug/debugPanel.js"></script>
     </head>
 
     <body>
         <!-- include helper files here... -->
         <script type="text/javascript" src="tests/helper/helper-spec.js"></script>
-
         <!-- include spec files here... -->
         <script type="text/javascript" src="tests/spec/init.js"></script>
         <script type="text/javascript" src="tests/spec/audio-spec.js"></script>
@@ -37,9 +38,20 @@
         <script type="text/javascript" src="tests/spec/draggable-spec.js"></script>
         <script type="text/javascript" src="tests/spec/droptarget-spec.js"></script>
         <script type="text/javascript" src="tests/spec/plugin-spec.js"></script>
-        <script type="text/javascript" src="tests/spec/entity-spec.js"></script>
         <script type="text/javascript" src="tests/spec/renderable-spec.js"></script>
+        <!---------------------------------------------------------------------------------->
+        
+        <!-- Testes Alterados -->
         <script type="text/javascript" src="tests/spec/sprite-spec.js"></script>
+        <script type="text/javascript" src="tests/spec/entity-spec.js"></script>
+
+        <!-- Testes adicionados -->
+        <script type="text/javascript" src="tests/spec/dificulty-spec.js"></script>
+        <script type="text/javascript" src="tests/spec/fireBase-spec.js"></script>
+        <script type="text/javascript" src="tests/spec/tips-spec.js"></script>
+
+        <!---------------------------------------------------------------------------------->
+
         <script type="text/javascript" src="tests/spec/font-spec.js"></script>
         <script type="text/javascript" src="tests/spec/bitmapfontdata-spec.js"></script>
         <script type="text/javascript" src="tests/spec/input-spec.js"></script>

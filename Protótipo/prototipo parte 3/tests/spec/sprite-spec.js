@@ -3,6 +3,7 @@ describe("me.Sprite", function () {
     var sprite;
     var setCurrentAnimationCallback = {}
 
+    //Antes de executar cada teste, cria-se o sprite e o container para ele
     beforeAll(function () {
         container = new me.Container(50, 50, 150, 150);
         sprite = new me.Sprite(0, 0, {
@@ -15,13 +16,12 @@ describe("me.Sprite", function () {
         setCurrentAnimationCallback["callback"] = function () {};
         spyOn(setCurrentAnimationCallback, "callback");
 
-        // add to a parent container
         container.addChild(sprite);
     });
 
-
-    it("me.Sprite bounds return the visible part of the sprite", function () {
+    it("Verifica a largura e altura do sprite no container", function () {
         var bounds = sprite.getBounds();
+
         expect(bounds.pos.x).toEqual(50);
         expect(bounds.pos.y).toEqual(50);
         expect(bounds.width).toEqual(32);
