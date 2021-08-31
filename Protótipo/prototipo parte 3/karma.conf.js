@@ -1,43 +1,43 @@
 module.exports = function(config) {
   config.set({
-    basePath: '',
+    basePath: "",
 
     files: [
         // melonJS
-        { pattern: 'build/melonjs.js', watched: false },
+        { pattern: "build/melonjs.js", watched: false },
         // test data
-        { pattern: 'tests/data/**/*', watched: false, included: false, served: true, nocache: false },
+        { pattern: "tests/data/**/*", watched: false, included: false, served: true, nocache: false },
         // test files
-        'tests/helper/helper-spec.js',
-        'tests/spec/**/*.js'
+        "tests/helper/helper-spec.js",
+        "tests/spec/**/*.js"
     ],
 
     proxies: {
         "/tests/": "/base/tests/"
     },
 
-    frameworks: ['jasmine'],
-    
+    frameworks: ["jasmine"],
+
     client: {
         jasmine: {
             random: false,
-            seed: '4321',
+            seed: "4321",
             oneFailurePerSpec: false,
             failFast: true,
             timeoutInterval: 1000
         }
     },
 
-    reporters: ['nyan', 'coverage', 'htmlDetailed'],
+    reporters: ["nyan", "coverage", "htmlDetailed"],
 
     // reporter options
     nyanReporter: {
         // suppress the error report at the end of the test run
-        suppressErrorReport: false, // default is false
+        suppressErrorReport: true, // default is false
 
         // suppress the red background on errors in the error
         // report at the end of the test run
-        suppressErrorHighlighting: false, // default is false
+        suppressErrorHighlighting: true, // default is false
 
         // increase the number of rainbow lines displayed
         // enforced min = 4, enforced max = terminal height - 1
@@ -50,21 +50,21 @@ module.exports = function(config) {
     },
 
     htmlDetailed: {
-        dir: 'build/reports/karma',
+        dir: "build/reports/karma",
         splitResults: true,
         useHostedBootstrap: true,
         autoReload: false
     },
 
     coverageReporter: {
-        dir: 'build/reports/coverage',
+        dir: "build/reports/coverage",
         reporters: [
-            { type: 'html', subdir: 'report-html' }
+            { type: "html", subdir: "report-html" }
         ]
     },
 
     //other supported options are Chrome and ChromeHeadless
-    browsers: ["ChromeHeadless"],
+    browsers: ["Chrome"],
     singleRun: true
 
   });
@@ -72,4 +72,4 @@ module.exports = function(config) {
   if (process.env.TRAVIS) {
      config.nyanReporter.renderOnRunCompleteOnly = true;
   }
-}
+};
